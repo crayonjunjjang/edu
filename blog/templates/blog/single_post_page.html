@@ -3,14 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ post.title }} - Blog</title>
+    <style>
+        /* Google Fonts에서 'Monoton' (네온사인) 및 'Noto Sans KR' 폰트 가져오기 */
+        @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Noto+Sans+KR:wght@400;700&display=swap');
+
+        /* --- 기본 스타일 --- */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #ffffff; /* 기본 글자색 흰색 */
+            margin: 0;
+            padding: 0;
+            padding-top: 80px; /* 고정된 nav 높이만큼 패딩 */
+
+            /* "무리하게 화려한" 애니메이션 그라데이션 배경 */
+            background: linear-gradient(125deg, #ff00ff, #00ffff, #ff00ff, #8a2be2);
+            background-size: 400% 400%;
+            animation: gradientMove 10s ease infinite;
+        }
+
+        /* 배경 애니메이션 키프레임 */
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- 상단 네비게이션 --- */
+        nav {
+            position: fixed; /* 화면 상단에 고정 */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5); /* 반투명 검은색 */
+            backdrop-filter: blur(5px); /* 뒷배경 블러 (글래스모피즘) */
+            padding: 1rem 2rem;
+            text-align: left;
+            box-shadow: 0 4px 15px rgba(255, 0, 255, 0.3); /* 네온 그림자 */
+            z-index: 10;
+            border-bottom: 2px solid #ff00ff;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #00ffff; /* 네온 시안(Cyan) */
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+            transform: scale(1.1);
+        }
+
+        /* --- 메인 콘텐츠 컨테이너 --- */
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2.5rem;
+            background: rgba(0, 0, 0, 0.7); /* 반투명 검은색 */
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            /* "무리하게 화려한" 네온 그림자 */
+            box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff, 0 0 45px #ff00ff;
+
+            /* 등장 애니메이션 */
+            animation: fadeInGlow 1.5s ease-out;
+        }
+
+        @keyframes fadeInGlow {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+                box-shadow: 0 0 5px #ff00ff;
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff, 0 0 45px #ff00ff;
+            }
+        }
+
+
+        /* --- 포스트 타이틀 (h1) --- */
+        h1 {
+            font-family: 'Monoton', cursive; /* 네온사인 폰트 */
+            font-size: 4rem; /* 매우 크게 */
+            color: #ffffff;
+            text-align: center;
+            /* "무리하게 화려한" 네온 텍스트 그림자 */
+            text-shadow:
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px #00ffff,
+                0 0 30px #00ffff,
+                0 0 40px #00ffff;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        /* --- 작성일 (h4) --- */
+        h4 {
+            text-align: center;
+            font-size: 1rem;
+            color: #dddddd;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+
+        /* --- 포스트 내용 (p) --- */
+        p {
+            font-size: 1.1rem;
+            color: #f0f0f0; /* 완전 흰색보다 살짝 어둡게 */
+            line-height: 1.8;
+            word-break: keep-all;
+        }
+
+        /* --- 구분선 (hr) --- */
+        hr {
+            border: 0;
+            height: 3px;
+            /* "무리하게 화려한" 그라데이션 선 */
+            background: linear-gradient(to right, transparent, #00ffff, #ff00ff, transparent);
+            margin: 2.5rem 0;
+            opacity: 0.7;
+        }
+    </style>
 </head>
 <body>
+
 <nav>
     <a href="/blog/">Blog</a>
 </nav>
-<h1>{{ post.title }}</h1>
-<h4>{{ post.created_at }}</h4>
-<p>{{ post.content }}</p>
-<hr/>
+
+<main>
+    <h1>{{ post.title }}</h1>
+    <h4>{{ post.created_at }}</h4>
+    <p>{{ post.content }}</p>
+    <hr/>
+</main>
+
 </body>
 </html>

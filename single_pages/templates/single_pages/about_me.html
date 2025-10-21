@@ -3,16 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <title>달타냥입니다!</title>
+    <style>
+        /* Google Fonts에서 'Noto Sans KR' 폰트 가져오기 */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+        /* --- 기본 스타일 --- */
+        html, body {
+            height: 100%; /* 화면 전체 높이 사용 */
+            margin: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f9f9f9; /* 밝은 회색 배경 */
+        }
+
+        /* --- 레이아웃 (CSS Grid) --- */
+        body {
+            display: grid;
+            grid-template-columns: 240px 1fr; /* 240px 사이드바, 나머지 콘텐츠 영역 */
+            grid-template-rows: 100vh; /* 뷰포트 높이 100% */
+        }
+
+        /* --- 사이드바 네비게이션 --- */
+        nav {
+            grid-column: 1 / 2; /* 첫 번째 열 */
+            background-color: #343a40; /* 어두운 배경색 */
+            color: #ffffff;
+            padding: 2rem;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* 오른쪽에 그림자 */
+            display: flex;
+            flex-direction: column; /* 링크를 세로로 정렬 */
+            align-items: center; /* 가운데 정렬 */
+            padding-top: 5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #e9ecef; /* 밝은 글씨 색 */
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px; /* 둥근 모서리 */
+            width: 80%; /* 너비 통일 */
+            text-align: center;
+            transition: background-color 0.3s ease, color 0.3s ease; /* 부드러운 전환 */
+        }
+
+        nav a:hover {
+            background-color: #20c997; /* 민트 그린 포인트 컬러 */
+            color: #ffffff; /* 흰색 글씨 */
+        }
+
+        /* --- 메인 콘텐츠 --- */
+        main {
+            grid-column: 2 / 3; /* 두 번째 열 */
+            padding: 3rem 4rem;
+            overflow-y: auto; /* 콘텐츠가 길어지면 스크롤 */
+
+            /* 콘텐츠 등장 애니메이션 */
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+
+        h1 {
+            font-size: 2.8rem;
+            color: #343a40;
+            border-bottom: 4px solid #20c997; /* 하단 포인트 테두리 */
+            padding-bottom: 0.5rem;
+            display: inline-block; /* 테두리가 텍스트 길이에 맞게 조절됨 */
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #495057;
+            margin-top: 2.5rem;
+        }
+
+        /* p 태그 스타일 추가 */
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
+
 <nav>
     <a href="/blog/">Blog</a>
     <a href="/about_me">About me</a>
 </nav>
 
-<h1>안녕하세요. 달고나입니다.</h1>
-<h2>대문페이지</h2>
-<h3>아직 만들지 않음</h3>
+<main>
+    <h1>안녕하세요. 달고나입니다.</h1>
+
+    <h2>👋 환영합니다!</h2>
+    <p>
+        끊임없이 배우고 성장하는 것을 즐기는 개발자 달고나입니다. <br>
+        이곳은 저의 생각과 경험을 기록하고 공유하기 위해 만든 개인적인 공간입니다. <br>
+        복잡한 문제를 해결하고 새로운 기술을 탐구하며 얻은 인사이트를 나누고 싶습니다.
+    </p>
+
+    <h2>무엇을 보실 수 있나요?</h2>
+    <p>
+        아직은 준비 중이지만, 앞으로 <b>Blog</b> 메뉴에서는 개발 관련 튜토리얼이나 프로젝트 회고록을 공유할 예정입니다. <br>
+        <b>About me</b> 페이지에서는 저의 이력과 포트폴리오를 확인하실 수 있도록 준비하겠습니다. <br>
+        자주 방문해주세요!
+    </p>
+
+</main>
 
 </body>
 </html>

@@ -3,17 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <title>달타냥입니다!</title>
+    <style>
+        /* Google Fonts에서 'Nanum Gothic' 폰트 가져오기 */
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+
+        /* --- 기본 스타일 --- */
+        body {
+            font-family: 'Nanum Gothic', sans-serif; /* 기본 폰트 설정 */
+            background-color: #f0f2f5; /* 부드러운 회색 배경 */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* --- 네비게이션 바 --- */
+        nav {
+            background-color: #ffffff;
+            padding: 1rem 2rem;
+            text-align: right;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 은은한 그림자 */
+            border-bottom: 3px solid #007bff; /* 하단 포인트 컬러 */
+        }
+
+        nav a {
+            font-weight: 700;
+            text-decoration: none; /* 밑줄 제거 */
+            color: #007bff; /* 링크 색상 */
+            margin-left: 20px;
+            font-size: 1.1rem;
+            transition: color 0.3s ease, transform 0.3s ease; /* 부드러운 전환 효과 */
+        }
+
+        nav a:hover {
+            color: #0056b3; /* 마우스 올렸을 때 색상 */
+            transform: scale(1.1); /* 살짝 커지는 효과 */
+        }
+
+        /* --- 메인 콘텐츠 컨테이너 --- */
+        .container {
+            max-width: 900px;
+            margin: 3rem auto; /* 상하 여백 및 중앙 정렬 */
+            padding: 2rem 3rem; /* 좌우 패딩 증가 */
+            background-color: #ffffff;
+            border-radius: 10px; /* 둥근 모서리 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 카드 그림자 */
+            text-align: left; /* 내용을 위해 왼쪽 정렬로 변경 */
+            /* 페이지 로드 시 부드럽게 나타나는 애니메이션 */
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- 헤더 (h1, h2, h3) --- */
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center; /* 컨테이너가 왼쪽 정렬이므로 제목은 중앙 정렬 유지 */
+            /* 화려한 그라데이션 텍스트 효과 */
+            background: linear-gradient(135deg, #007bff, #6f42c1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #343a40;
+            text-align: center; /* 섹션 제목 중앙 정렬 */
+            border-bottom: 2px solid #eee; /* 구분선 */
+            padding-bottom: 10px;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #007bff;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            background-color: #f8f9fa;
+            padding: 0.8rem 1.2rem;
+            border-left: 4px solid #6f42c1;
+            margin-bottom: 0.5rem;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .portfolio-item {
+            border: 1px solid #e9ecef;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .portfolio-item h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.3rem;
+            color: #343a40;
+        }
+
+    </style>
 </head>
 <body>
+
 <nav>
     <a href="/blog/">Blog</a>
     <a href="/about_me">About me</a>
 </nav>
 
-<h1>안녕하세요. 달고나입니다.</h1>
-<h2>2력</h2>
-<h2>portfolio</h2>
-<h3>아직 공사중이야.</h3>
+<div class="container">
+    <h1>안녕하세요. 달고나입니다.</h1>
+    <p style="text-align: center;">기술을 통해 더 나은 세상을 만드는 것을 꿈꾸는 개발자입니다. <br>배움에 대한 열정과 새로운 도전에 대한 즐거움으로 매일 성장하고 있습니다.</p>
+
+    <h2>🛠️ 기술 스택</h2>
+    <ul>
+        <li><b>Frontend:</b> HTML, CSS, JavaScript, React</li>
+        <li><b>Backend:</b> Python, Django, Node.js</li>
+        <li><b>Database:</b> PostgreSQL, MySQL</li>
+        <li><b>DevOps:</b> Docker, AWS</li>
+    </ul>
+
+    <h2>🚀 Portfolio</h2>
+
+    <div class="portfolio-item">
+        <h4>개인 블로그 개발 프로젝트</h4>
+        <p>Django 프레임워크를 기반으로 제작한 개인 기술 블로그입니다. 마크다운 에디터, 태그 시스템, 댓글 기능 등을 구현하며 웹 개발의 전반적인 흐름을 익혔습니다.</p>
+    </div>
+
+    <div class="portfolio-item">
+        <h4>실시간 날씨 정보 웹 앱</h4>
+        <p>OpenWeatherMap API와 Geolocation API를 활용하여 현재 위치의 날씨 정보를 보여주는 웹 애플리케이션입니다. Vanilla JS를 사용하여 비동기 데이터 통신을 연습했습니다.</p>
+    </div>
+
+    <div class="portfolio-item">
+        <h4>(팀 프로젝트) 협업을 위한 칸반 보드</h4>
+        <p>React와 WebSocket을 이용하여 여러 사용자가 실시간으로 태스크를 공유하고 관리할 수 있는 칸반 보드 프로젝트를 진행했습니다. 드래그 앤 드롭 기능을 구현하여 사용자 경험을 개선했습니다.</p>
+    </div>
+
+</div>
 
 </body>
 </html>
+
